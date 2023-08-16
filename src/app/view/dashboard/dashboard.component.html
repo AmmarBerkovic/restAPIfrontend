@@ -1,0 +1,50 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-3 d-flex justify-content-around">
+      <p>Add new person</p>
+    </div>
+    <div class="col-3">
+      <input class="form-control" placeholder="name" name="name" type="text" #name>
+    </div>
+    <div class="col-3">
+      <input class="form-control" placeholder="surname" name="surname" type="text" #surname>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-primary" (click)="addPerson(name.value,surname.value)">Click</button>
+    </div>
+  </div>
+  <br><br>
+  <i class="fab fa-500px"></i>
+  <div class="row">
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let index of persons">
+        <td>{{index.name}}</td>
+        <td>{{index.surname}}</td>
+        <td><button class="btn btn-primary" (click)="deletePerson(index.surname)">Delete </button></td>
+      </tr>
+    </table>
+  </div>
+  <br><br>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-3 d-flex justify-content-around">
+      <p>Update a person</p>
+    </div>
+    <div class="col-3">
+      <input class="form-control" placeholder="surname" type="text" #sur>
+    </div>
+    <div class="col-3">
+      <input class="form-control" placeholder="name" type="text" #nam>
+    </div>
+    <div class="col-2">
+      <button class="btn btn-primary" (click)="updatePerson(sur.value,nam.value)">Click</button>
+    </div>
+  </div>
+</div>
